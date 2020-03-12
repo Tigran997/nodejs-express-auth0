@@ -27,6 +27,7 @@ process.env.DB_NAME =  process.env.DB_NAME || 'node-login';
 
 if(app.get('env') != 'live'){
     process.env.DB_URL = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
+    
 }
 else{
     process.env.DB_URL = 'mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@' + process.env.DB_HOST + ':' + process.env.DB_PORT;
