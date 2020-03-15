@@ -15,7 +15,7 @@ function AccountValidator(){
             return true;
         }
         else{
-            return s.length >=6;
+            return s.length >=6;    
         }
     }
 
@@ -48,5 +48,21 @@ AccountValidator.prototype.showInvalidUserName = function (){
 AccountValidator.prototype.validateForm = function (){
     var e = [];
     for (var i = 0; i < this.controlGroups.length; i++) this.controlGroups[i].removeClass('error');
-    if(this.validateName())
+    if(this.validateName()){
+        this.controlGroups[0].addClass('error'); e.push('Please Enter Your Name');
+    }
+    if (this.validateEmail(this.formFields[1].val()) == false) {
+        this.controlGroups[1].addClass('error'); e.push('Please Enter A Valid Email');
+    }
+    if (this.validateName(this.formFields[2].val()) == false) {
+        this.controlGroups[2].addClass('error');
+        e.push('Please Choose A Username');
+    }
+    if (this.validatePassword(this.formFields[3].val()) == false) {
+        this.controlGroups[3].addClass('error');
+        e.push('Password Should Be At Least 6 Characters');
+    }
+    if (e.length) this.showErrors(e);
+    return e.length === 0;
+    
 }
