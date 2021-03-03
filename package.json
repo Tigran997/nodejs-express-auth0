@@ -18,7 +18,7 @@
     "express-session": "^1.17.0",
     "moment": "^2.24.0",
     "mongodb": "^3.5.4",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "stylus": "^0.54.7",
     "connect-mongo": "^2.0.1"
   },
